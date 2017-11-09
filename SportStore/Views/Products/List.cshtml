@@ -1,0 +1,20 @@
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>Products List</h2>
+
+@foreach (Product p in Model){ //Para cada produto p contido no modelo, percorre a lista de produtos
+    <div>
+        <h3>@p.Name</h3>
+        <p>@p.Description</p>
+        <h4>@p.Price</h4>
+    </div>
+
+    <hr />
+    
+
+}
+
