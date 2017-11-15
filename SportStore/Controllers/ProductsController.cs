@@ -11,12 +11,19 @@ namespace SportStore.Controllers
         //need to get the repository - service
         private IProductRepository repository;
 
+        public int PageSize = 4;
+
         public ProductsController(IProductRepository repository) {
             this.repository = repository;
         }
 
-        public ViewResult List() {
-            return View(repository.Products);
+        public ViewResult List(int page = 1) {
+            return View(
+                repository.Products
+                    .OrderBy(p => p.Price)
+                    .Skip(PageSize * (page - 1))
+                    .Take(PageSize)
+                );
         }
     }
 }

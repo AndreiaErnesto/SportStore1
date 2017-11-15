@@ -66,7 +66,7 @@ namespace SportStore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Products}/{action=List}/{id?}");
             });
             //ADICIONAR SEEDDATA
             SeedData.EnsurePopulated(app.ApplicationServices);
