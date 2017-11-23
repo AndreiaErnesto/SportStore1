@@ -7,15 +7,7 @@
 <h2>Products List</h2>
 
 @foreach (Product p in Model.Products){ //Para cada produto p contido no modelo, percorre a lista de produtos
-    <div class="well well-sm">
-        <h3>
-            <strong>@p.Name</strong>
-            <span class="label label-default pull-right">@p.Price.ToString("c")</span>
-        </h3>
-
-        <p>@p.Description</p>
-        
-    </div>
+    @Html.Partial("ProductSummary", p);
 
     <hr />
 }

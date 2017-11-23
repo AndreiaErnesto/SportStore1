@@ -1,0 +1,13 @@
+﻿@model Product
+
+<div class="well well-sm">
+    <h3>
+        <strong>@Model.Name</strong>
+        <span class="label label-default pull-right">
+            @Model.Price.ToString("c")
+        </span>
+    </h3>
+
+    <p>@Model.Description</p>
+
+</div>

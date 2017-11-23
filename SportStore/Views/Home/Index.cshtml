@@ -1,18 +1,18 @@
-﻿@{
+﻿@model IEnumerable<Product>
+
+@{
     ViewData["Title"] = "Products";
 }
 
+<h2>Today Promotions</h2>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h2 class="panel-title">Products</h2>
+@foreach(Product p in Model)
+{
+    @Html.Partial("ProductSummary", p)
+}
 
-    </div>
-    <div class="panel-body">
-        <!--tabela produtos-->
-    </div>
-    <div class="panel-footer">
-
-    </div>
-</div>
-
+<a asp-controller="Products" 
+   asp-action="List" 
+   class="btn btn-info">
+    View all products
+</a>
